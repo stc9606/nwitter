@@ -50,8 +50,6 @@ const Auth = () => {
         await authService.signInWithPopup(provider).then(function(result) {
             console.log(result);
         });
-        
-
     }
 
     return (
@@ -77,11 +75,11 @@ const Auth = () => {
                     type="Submit"
                     value={newAccount ? "Create Account" : "Log In"}
                 />
-                {error}
-                <span onClick={toggoleAccount}>
-                    {newAccount ? "Sign In" : "Create Account"}
-                </span>
+                {error}                
             </form>
+            <span onClick={toggoleAccount}>
+                {newAccount ? "Sign In" : "Create Account"}
+            </span>
             <div>
                 <button onClick={onSocialClick} name="google">Continue with Google</button>
                 <button onClick={onSocialClick} name="github">Continue with Github</button>
